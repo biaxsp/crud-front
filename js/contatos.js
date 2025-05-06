@@ -1,4 +1,24 @@
-async function postContatos(contato) {
+'use strict'
+
+
+export async function getContatos() {
+    const url = "https://bakcend-fecaf-render.onrender.com/contatos"
+    const response = await fetch(url)
+
+    const data = await response.json()
+   
+    return data
+}
+
+export async function getContatosPorNome(nome) {
+    const url = `https://bakcend-fecaf-render.onrender.com/contatos?nome_like=^${nome}`
+    const response = await fetch(url)
+
+    const data = await response.json()
+    return data
+}
+
+export async function postContatos(contato) {
     const url = "https://bakcend-fecaf-render.onrender.com/contatos"
     const options = {
         method: 'POST',
@@ -50,4 +70,3 @@ const contato = {
     "cidade": "Jandira"
       
 }
-

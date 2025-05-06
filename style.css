@@ -1,4 +1,4 @@
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -9,7 +9,7 @@ a{
     color: inherit;
 }
 
-ul,ol, li{
+ul, ol , li{
     list-style: none;
 }
 
@@ -22,10 +22,9 @@ header{
     justify-content: space-between;
     align-items: center;
     gap: 32px;
-    border-bottom: 1px  solid red;
-    padding-bottom: ;
+    border-bottom: 2px solid red;
+    padding-bottom: 32px;
 }
-
 
 header img{
     height: 48px;
@@ -34,34 +33,29 @@ header img{
 header input{
     height: 48px;
     flex-grow: 1;
-    border: 1px solid red;
-    outline: none;
+    border-color: rgb(255, 0, 0);
     border-radius: 10px;
+    outline: none;
     padding: 0 12px;
-    
 }
 
-header button{
+.button{
     height: 48px;
+    min-width: 100px;
     border-radius: 12px;
-    background-color: brown;
-    color: white;
+    background-color: rgb(170, 5, 5);
+    color: aliceblue;
     padding: 0 8px;
     border: none;
     cursor: pointer;
+    display: none;
 }
 
-main{
-    padding-top: 32px;
+.button.show{
+    display: block;
 }
 
-.container{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 32px;
-}
-
-.card-contato{
+.cardContato{
     height: 300px;
     width: 250px;
     display: flex;
@@ -69,15 +63,95 @@ main{
     justify-content: center;
     align-items: center;
     gap: 8px;
-    box-shadow: 2px 2px 8px #0003;
-    border-radius: 8px;
+    box-shadow: 2px 2px 8px black;
+    border-radius: 20px;
     border-bottom: 32px solid red;
-
 }
-
-.card-contato img{
+.cardContato img{
     height: 160px;
     border-radius: 50%;
     border: 4px solid red;
+}
 
+main{
+    padding-top: 32px;
+}
+
+
+main.card-show .container{
+    display: flex;
+}
+
+.container{
+    display: none;
+    flex-wrap: wrap;
+    gap: 32px;
+}
+
+form{
+    width: 80%;
+    margin: auto;
+    display: none;
+    flex-wrap: wrap;
+    gap: 32px;
+    padding: 32px;
+}
+
+main.form-show form{
+    display: flex;
+}
+
+.preview{
+    width: 300px;
+    height: 300px;
+    position: relative;
+    border-radius: 50%;
+    border: 4px solid red;
+    overflow: hidden;
+}
+
+.preview-input{
+    display: none;
+}
+
+.preview-label{
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.preview-image{
+    height: 100%;
+    width: 100%;
+}
+
+.input-container{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.input{
+    display: flex;
+    flex-direction: column;
+}
+
+.input-text{
+    height: 32px;
+    border: 2px solid red;
+    border-radius: 4px;
+    padding-left: 16px;
+    outline: none;
+}
+
+.input-text:focus{
+    border: 3px solid darkred;
+}
+
+.button-container{
+    width: 75%;
+    display: flex;
+    justify-content: space-evenly;
 }
